@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Home: NewTweam</title>
+  <meta property="og:title" content="NewTweam" />
+  <meta property="og:description" content="We're a group of college students, united by our passion for cybersecurity." />
+  <meta property="og:url" content="http://localhost:3000/" /> <!-- Change this if needed -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="NewTweam" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NewTweam" />
+  <meta name="twitter:description" content="We're a group of college students, united by our passion for cybersecurity." />
+  <meta name="description" content="NewTweam: We're a group of college students, united by our passion for cybersecurity." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+  <div class="container">
+    <nav>
+      <a href="#" title="NewTweam" class="team-name">$ NewTweam</a>
+      <div class="nav-links desktop-nav">
+        <a href="index.html"><button class="ui-btn"><span>Home</span></button></a>
+        <a href="members.html"><button class="ui-btn"><span>Members</span></button></a>
+        <a href="achievements.html"><button class="ui-btn"><span>Achievements</span></button></a>
+        <a href="contact.html"><button class="ui-btn"><span>Contact</span></button></a>
+      </div>
+      <div class="mobile-nav">
+        <button class="dropdown-btn">≡</button>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="members.html">Members</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="main-content">
+        <div class="whoami">
+          $ whoami<span class="cursor">|</span>
+        </div>
+        <p><b>Welcome! We're just a new team made up of random people coming together to try out different things.</b></p>
+        <p><b>Every day presents us with new challenges and opportunities to experiment and learn.</b></p>
+        <p><b>If you're curious about what we're doing or want to join us on this journey, feel free to reach out on our Discord server!</b></p>
+        <a href="https://discord.gg/ktgq7a9rVC" target="_blank">
+          <button class="discord-btn"><b>Join Discord: NewTweam</b></button>
+        </a>
+      </div>
+      
+  <div id="piano-modal" class="hidden">
+    <div class="modal-overlay"></div>
+    <div class="piano-container">
+        <div class="piano-key" data-note="C4">↑</div>
+        <div class="piano-key" data-note="D4">←</div>
+        <div class="piano-key" data-note="E4">↓</div>
+        <div class="piano-key" data-note="F4">→</div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('.dropdown-btn').addEventListener('click', function() {
+      document.querySelector('.dropdown-content').classList.toggle('show');
+    });
+
+    // Smooth scroll to sections
+    document.querySelectorAll('a.nav-item').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Toggle background color when clicking the button
+    const colorToggleButton = document.getElementById('color-toggle-btn');
+    let isDark = true;
+
+    colorToggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('bg-gray-900');
+      document.body.classList.toggle('bg-gray-100');
+      document.body.classList.toggle('text-gray-900');
+      document.body.classList.toggle('text-white');
+      isDark = !isDark;
+
+      colorToggleButton.innerText = isDark ? 'Explore More' : 'Switch Back';
+    });
+  </script>
+</body>
+</html>
